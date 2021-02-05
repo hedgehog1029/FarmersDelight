@@ -69,12 +69,12 @@ public class Foods
 			.effect(() -> new EffectInstance(Effects.SPEED, 1800, 0), 1.0F).build();
 	public static final Food FRUIT_SALAD = (new Food.Builder())
 			.hunger(6).saturation(0.6f)
-			.effect(() -> new EffectInstance(Effects.REGENERATION, 200, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(Effects.REGENERATION, 100, 0), 1.0F).build();
 
 	// Handheld Foods
 	public static final Food MIXED_SALAD = (new Food.Builder())
 			.hunger(6).saturation(0.6f)
-			.effect(() -> new EffectInstance(Effects.REGENERATION, 200, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(Effects.REGENERATION, 100, 0), 1.0F).build();
 	public static final Food NETHER_SALAD = (new Food.Builder())
 			.hunger(5).saturation(0.4f)
 			.effect(() -> new EffectInstance(Effects.NAUSEA, 240, 0), 0.3F).build();
@@ -114,7 +114,7 @@ public class Foods
 			.effect(() -> new EffectInstance(ModEffects.COMFORT.get(), 4800, 0), 1.0F).build();
 	public static final Food FRIED_RICE = (new Food.Builder())
 			.hunger(10).saturation(0.8f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 1200, 0), 1.0F).build();
 	public static final Food PUMPKIN_SOUP = (new Food.Builder())
 			.hunger(10).saturation(0.9f)
 			.effect(() -> new EffectInstance(ModEffects.COMFORT.get(), 4800, 0), 1.0F).build();
@@ -125,39 +125,39 @@ public class Foods
 	// Plated Foods
 	public static final Food STEAK_AND_POTATOES = (new Food.Builder())
 			.hunger(12).saturation(0.8f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 	public static final Food HONEY_GLAZED_HAM = (new Food.Builder())
 			.hunger(14).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F)
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F)
 			.effect(() -> new EffectInstance(Effects.ABSORPTION, 1800, 0), 1.0F).build();
 	public static final Food PASTA_WITH_MEATBALLS = (new Food.Builder())
 			.hunger(12).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 	public static final Food PASTA_WITH_MUTTON_CHOP = (new Food.Builder())
 			.hunger(12).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 	public static final Food VEGETABLE_NOODLES = (new Food.Builder())
 			.hunger(14).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 	public static final Food SHEPHERDS_PIE = (new Food.Builder())
 			.hunger(14).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 	public static final Food RATATOUILLE = (new Food.Builder())
 			.hunger(9).saturation(0.6f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 1200, 0), 1.0F).build();
 	public static final Food SQUID_INK_PASTA = (new Food.Builder())
 			.hunger(14).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 	public static final Food GRILLED_SALMON = (new Food.Builder())
 			.hunger(12).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 
 	public static final Food ROAST_CHICKEN = (new Food.Builder())
 			.hunger(14).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 	public static final Food STUFFED_PUMPKIN = (new Food.Builder())
 			.hunger(12).saturation(0.8f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
 
 	public static final Food DOG_FOOD = (new Food.Builder())
 			.hunger(4).saturation(0.2f).meat().build();

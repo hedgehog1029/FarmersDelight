@@ -6,9 +6,14 @@
     "iii"
   ],
   "key": {
-    "b": {
-      "item": "minecraft:brick"
-    },
+    "b": [
+      {
+        "item": "minecraft:brick"
+      },
+      {
+        "item": "minecraft:nether_brick"
+      }
+    ],
     "i": {
       "item": "minecraft:iron_ingot"
     },

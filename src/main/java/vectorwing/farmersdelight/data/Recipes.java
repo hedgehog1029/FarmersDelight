@@ -9,7 +9,6 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.data.recipes.CookingRecipes;
 import vectorwing.farmersdelight.data.recipes.CuttingRecipes;
@@ -132,7 +131,7 @@ public class Recipes extends RecipeProvider
 				.patternLine("bSb")
 				.patternLine("iWi")
 				.patternLine("iii")
-				.key('b', Items.BRICK)
+				.key('b', Ingredient.fromItems(Items.BRICK, Items.NETHER_BRICK))
 				.key('i', Items.IRON_INGOT)
 				.key('S', Items.WOODEN_SHOVEL)
 				.key('W', Items.WATER_BUCKET)
@@ -425,14 +424,19 @@ public class Recipes extends RecipeProvider
 				.addCriterion("has_milk_bucket", InventoryChangeTrigger.Instance.forItems(Items.MILK_BUCKET))
 				.build(consumer);
 		ShapelessRecipeBuilder.shapelessRecipe(ModItems.RAW_PASTA.get())
-				.addIngredient(Ingredient.merge(Sets.newHashSet(
-						Ingredient.fromTag(ForgeTags.EGGS),
-						Ingredient.fromItems(Items.WATER_BUCKET)
-				)))
+				.addIngredient(Ingredient.fromTag(ForgeTags.EGGS))
 				.addIngredient(Items.WHEAT)
 				.addIngredient(Items.WHEAT)
 				.addCriterion("has_wheat", InventoryChangeTrigger.Instance.forItems(Items.WHEAT))
 				.build(consumer);
+		ShapelessRecipeBuilder.shapelessRecipe(ModItems.RAW_PASTA.get(), 2)
+				.addIngredient(Ingredient.fromItems(Items.WATER_BUCKET))
+				.addIngredient(Items.WHEAT)
+				.addIngredient(Items.WHEAT)
+				.addIngredient(Items.WHEAT)
+				.addIngredient(Items.WHEAT)
+				.addCriterion("has_wheat", InventoryChangeTrigger.Instance.forItems(Items.WHEAT))
+				.build(consumer, FarmersDelight.MODID + ":raw_pasta_using_water");
 		ShapedRecipeBuilder.shapedRecipe(ModItems.WHEAT_DOUGH.get(), 3)
 				.patternLine("www")
 				.patternLine(" b ")

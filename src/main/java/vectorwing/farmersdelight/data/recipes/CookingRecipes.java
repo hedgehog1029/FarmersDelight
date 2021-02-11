@@ -111,6 +111,7 @@ public class CookingRecipes
 				.build(consumer);
 		CookingPotRecipeBuilder.cookingRecipe(ModItems.PUMPKIN_SOUP.get(), 1)
 				.addIngredient(ModItems.PUMPKIN_SLICE.get())
+				.addIngredient(ModItems.PUMPKIN_SLICE.get())
 				.addIngredient(ForgeTags.SALAD_INGREDIENTS)
 				.addIngredient(ForgeTags.RAW_PORK)
 				.addIngredient(ForgeTags.MILK)

@@ -21,13 +21,17 @@ public class ComfortEffect extends Effect
 	public static final Set<Effect> COMFORT_IMMUNITIES = Sets.newHashSet(Effects.SLOWNESS, Effects.WEAKNESS, Effects.HUNGER);
 
 	/**
-	 * This effect makes the player immune to negative effects related to cold and sickness.
-	 * It also instantly heals the equivalent effects when first applied.
-	 * The effect runs entirely on events, which I assumed to be more efficient than constantly ticking over the entity's effect list.
-	 * Current targets: Slowness, Weakness and Hunger.
+	 * This effect safeguards a few hearts from being damaged by Poison or Wither, depending in the effect level.
+	 * The base protection is 3 hearts, with each amplifier level defending 2 more.
+	 * Most of the logic is applied on the equivalent mixin class; this class handles effect info and the overlay.
 	 */
 	public ComfortEffect() {
 		super(EffectType.BENEFICIAL, 0);
+	}
+
+	public static int getHealthEndurance(int amplifier) {
+		int amp = (amplifier + 1) * 4 + 2;
+		return amp;
 	}
 
 	@Mod.EventBusSubscriber(modid = FarmersDelight.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)

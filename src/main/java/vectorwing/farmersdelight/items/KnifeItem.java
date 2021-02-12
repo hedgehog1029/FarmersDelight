@@ -103,6 +103,7 @@ public class KnifeItem extends ToolItem
 		}
 	}
 
+	@Override
 	public ActionResultType onItemUse(ItemUseContext context) {
 		World world = context.getWorld();
 		ItemStack tool = context.getItem();

@@ -30,8 +30,7 @@ public class ComfortEffect extends Effect
 	}
 
 	public static int getHealthEndurance(int amplifier) {
-		int amp = (amplifier + 1) * 4 + 2;
-		return amp;
+		return (amplifier + 1) * 4 + 2;
 	}
 
 	@Mod.EventBusSubscriber(modid = FarmersDelight.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)

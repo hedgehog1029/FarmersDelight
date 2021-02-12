@@ -12,7 +12,7 @@ import vectorwing.farmersdelight.effects.ComfortEffect;
 import vectorwing.farmersdelight.registry.ModEffects;
 
 @Mixin(Effect.class)
-public class ComfortProtectionMixin
+public class ComfortMixin
 {
 	/**
 	 * This mixin makes Comfort defend the player from going under 3-5 hearts when under Poison or Wither.
@@ -20,7 +20,7 @@ public class ComfortProtectionMixin
 	 */
 	@SuppressWarnings("ConstantConditions")
 	@Inject(method = "performEffect", at = @At(value = "HEAD"), cancellable = true)
-	private void applyUpdateEffect(LivingEntity entity, int amplifier, CallbackInfo callbackInfo) {
+	private void performEffect(LivingEntity entity, int amplifier, CallbackInfo callbackInfo) {
 		EffectInstance comfort = entity.getActivePotionEffect(ModEffects.COMFORT.get());
 		if ((((Object) this) == Effects.POISON || ((Object) this) == Effects.WITHER) && comfort != null) {
 			if (entity.getHealth() <= ComfortEffect.getHealthEndurance(comfort.getAmplifier())) {

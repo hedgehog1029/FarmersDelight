@@ -66,7 +66,7 @@ public class Foods
 			.effect(() -> new EffectInstance(Effects.SPEED, 1200, 0), 1.0F).build();
 	public static final Food PIE_SLICE = (new Food.Builder())
 			.hunger(3).saturation(0.3f).fastToEat()
-			.effect(() -> new EffectInstance(Effects.SPEED, 1800, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(Effects.SPEED, 1200, 0), 1.0F).build();
 	public static final Food FRUIT_SALAD = (new Food.Builder())
 			.hunger(6).saturation(0.6f)
 			.effect(() -> new EffectInstance(Effects.REGENERATION, 100, 0), 1.0F).build();
@@ -126,10 +126,6 @@ public class Foods
 	public static final Food STEAK_AND_POTATOES = (new Food.Builder())
 			.hunger(12).saturation(0.8f)
 			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
-	public static final Food HONEY_GLAZED_HAM = (new Food.Builder())
-			.hunger(14).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F)
-			.effect(() -> new EffectInstance(Effects.ABSORPTION, 1800, 0), 1.0F).build();
 	public static final Food PASTA_WITH_MEATBALLS = (new Food.Builder())
 			.hunger(12).saturation(0.9f)
 			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
@@ -154,10 +150,14 @@ public class Foods
 
 	public static final Food ROAST_CHICKEN = (new Food.Builder())
 			.hunger(14).saturation(0.9f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 6000, 0), 1.0F).build();
 	public static final Food STUFFED_PUMPKIN = (new Food.Builder())
 			.hunger(12).saturation(0.8f)
-			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 3600, 0), 1.0F).build();
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 6000, 0), 1.0F).build();
+	public static final Food HONEY_GLAZED_HAM = (new Food.Builder())
+			.hunger(14).saturation(0.9f)
+			.effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 6000, 0), 1.0F)
+			.effect(() -> new EffectInstance(Effects.ABSORPTION, 1800, 0), 1.0F).build();
 
 	public static final Food DOG_FOOD = (new Food.Builder())
 			.hunger(4).saturation(0.2f).meat().build();

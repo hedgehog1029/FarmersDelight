@@ -5,7 +5,7 @@
     "refmap": "farmersdelight.refmap.json",
     "mixins": [
         "KeepRichSoilMixin",
-        "ComfortProtectionMixin"
+        "ComfortMixin"
     ],
     "injectors": {
         "defaultRequire": 1

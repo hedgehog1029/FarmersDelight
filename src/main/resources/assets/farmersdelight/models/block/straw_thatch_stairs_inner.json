@@ -1,0 +1,7 @@
+{
+  "parent": "farmersdelight:block/thatch/thatch_stairs_inner",
+  "textures": {
+    "thatch": "farmersdelight:block/straw_thatch",
+    "extrudes": "farmersdelight:block/straw_thatch_extrudes"
+  }
+}

@@ -1,14 +1,13 @@
 package vectorwing.farmersdelight.data;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.DoublePlantBlock;
-import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.Property;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoubleBlockHalf;
+import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.StairsShape;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -53,6 +52,11 @@ public class BlockStates extends BlockStateProvider
 	protected void registerStatesAndModels() {
 		this.simpleBlock(ModBlocks.RICH_SOIL.get(), cubeRandomRotation(ModBlocks.RICH_SOIL.get(), ""));
 		this.simpleBlock(ModBlocks.SAFETY_NET.get(), existingModel(ModBlocks.SAFETY_NET.get()));
+
+		this.simpleBlock(ModBlocks.STRAW_THATCH.get(), existingModel(ModBlocks.STRAW_THATCH.get()));
+		this.slabBlock((SlabBlock) ModBlocks.STRAW_THATCH_SLAB.get(), existingModel(ModBlocks.STRAW_THATCH_SLAB.get()), existingModel("straw_thatch_slab_top"), existingModel(ModBlocks.STRAW_THATCH.get()));
+//		this.stairsBlock((StairsBlock) ModBlocks.STRAW_THATCH_STAIRS.get(), existingModel(ModBlocks.STRAW_THATCH_STAIRS.get()), existingModel("straw_thatch_stairs_inner"), existingModel("straw_thatch_stairs_outer"));
+		this.stairsThatchBlock((StairsBlock) ModBlocks.STRAW_THATCH_STAIRS.get());
 
 		String riceBag = blockName(ModBlocks.RICE_BAG.get());
 		this.simpleBlock(ModBlocks.RICE_BAG.get(), models().withExistingParent(riceBag, "cube")
@@ -184,6 +188,47 @@ public class BlockStates extends BlockStateProvider
 		} else {
 			this.simpleBlock(block, models().cross(blockName(block), resourceBlock(blockName(block))));
 		}
+	}
+
+	public void stairsThatchBlock(StairsBlock block) {
+		ModelFile stairsBottom = existingModel(block);
+		ModelFile stairsTop = existingModel(blockName(block) + "_top");
+		ModelFile stairsInnerBottom = existingModel(blockName(block) + "_inner");
+		ModelFile stairsInnerTop = existingModel(blockName(block) + "_inner_top");
+		ModelFile stairsOuterBottom = existingModel(blockName(block) + "_outer");
+		ModelFile stairsOuterTop = existingModel(blockName(block) + "_outer_top");
+
+		getVariantBuilder(block)
+				.forAllStatesExcept(state -> {
+					Direction facing = state.get(StairsBlock.FACING);
+					Half half = state.get(StairsBlock.HALF);
+					StairsShape shape = state.get(StairsBlock.SHAPE);
+					int xRot = 0;
+					int yRot = (int) facing.rotateY().getHorizontalAngle(); // Stairs model is rotated 90 degrees clockwise for some reason
+					if (shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT) {
+						yRot += 270; // Left facing stairs are rotated 90 degrees clockwise
+					}
+					if (shape != StairsShape.STRAIGHT && half == Half.TOP) {
+						xRot += 180; // Top bent stairs need a 180 rotation
+						yRot += 90; // Top stairs are rotated 90 degrees clockwise
+					}
+					if (shape == StairsShape.STRAIGHT && half == Half.TOP) {
+						yRot += 180;
+					}
+					yRot %= 360;
+					boolean uvlock = yRot != 0 || half == Half.TOP; // Don't set uvlock for states that have no rotation
+
+					ModelFile stairs = half == Half.TOP ? stairsTop : stairsBottom;
+					ModelFile stairsInner = half == Half.TOP ? stairsInnerTop : stairsInnerBottom;
+					ModelFile stairsOuter = half == Half.TOP ? stairsOuterTop : stairsOuterBottom;
+
+					return ConfiguredModel.builder()
+							.modelFile(shape == StairsShape.STRAIGHT ? stairs : shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT ? stairsInner : stairsOuter)
+							.rotationX(xRot)
+							.rotationY(yRot)
+							.uvLock(uvlock)
+							.build();
+				}, StairsBlock.WATERLOGGED);
 	}
 
 	public void crateBlock(Block block, String cropName) {

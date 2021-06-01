@@ -41,6 +41,12 @@ public class ModItems
 			() -> new BlockItem(ModBlocks.RICE_BAG.get(), new Item.Properties().group(FarmersDelight.ITEM_GROUP)));
 	public static final RegistryObject<Item> STRAW_BALE = ITEMS.register("straw_bale",
 			() -> new BlockItem(ModBlocks.STRAW_BALE.get(), new Item.Properties().group(FarmersDelight.ITEM_GROUP)));
+	public static final RegistryObject<Item> STRAW_THATCH = ITEMS.register("straw_thatch",
+			() -> new BlockItem(ModBlocks.STRAW_THATCH.get(), new Item.Properties().group(FarmersDelight.ITEM_GROUP)));
+	public static final RegistryObject<Item> STRAW_THATCH_SLAB = ITEMS.register("straw_thatch_slab",
+			() -> new BlockItem(ModBlocks.STRAW_THATCH_SLAB.get(), new Item.Properties().group(FarmersDelight.ITEM_GROUP)));
+	public static final RegistryObject<Item> STRAW_THATCH_STAIRS = ITEMS.register("straw_thatch_stairs",
+			() -> new BlockItem(ModBlocks.STRAW_THATCH_STAIRS.get(), new Item.Properties().group(FarmersDelight.ITEM_GROUP)));
 
 	public static final RegistryObject<Item> SAFETY_NET = ITEMS.register("safety_net",
 			() -> new FuelBlockItem(ModBlocks.SAFETY_NET.get(), new Item.Properties().group(FarmersDelight.ITEM_GROUP), 200));

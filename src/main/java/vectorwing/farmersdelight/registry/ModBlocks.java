@@ -10,6 +10,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.blocks.*;
+import vectorwing.farmersdelight.blocks.thatch.StrawThatchBlock;
+import vectorwing.farmersdelight.blocks.thatch.StrawThatchSlabBlock;
+import vectorwing.farmersdelight.blocks.thatch.StrawThatchStairsBlock;
 
 import java.util.function.ToIntFunction;
 
@@ -46,6 +49,12 @@ public class ModBlocks
 			() -> new Block(Block.Properties.from(Blocks.WHITE_WOOL).harvestTool(ToolType.HOE)));
 	public static final RegistryObject<Block> STRAW_BALE = BLOCKS.register("straw_bale",
 			() -> new StrawBaleBlock(Block.Properties.from(Blocks.HAY_BLOCK).harvestTool(ToolType.HOE)));
+	public static final RegistryObject<Block> STRAW_THATCH = BLOCKS.register("straw_thatch",
+			() -> new StrawThatchBlock(Block.Properties.from(Blocks.HAY_BLOCK).harvestTool(ToolType.HOE)));
+	public static final RegistryObject<Block> STRAW_THATCH_SLAB = BLOCKS.register("straw_thatch_slab",
+			() -> new StrawThatchSlabBlock(Block.Properties.from(Blocks.HAY_BLOCK).harvestTool(ToolType.HOE)));
+	public static final RegistryObject<Block> STRAW_THATCH_STAIRS = BLOCKS.register("straw_thatch_stairs",
+			() -> new StrawThatchStairsBlock(STRAW_THATCH.get().getDefaultState(), Block.Properties.from(Blocks.HAY_BLOCK).harvestTool(ToolType.HOE)));
 
 	// Building
 	public static final RegistryObject<Block> ROPE = BLOCKS.register("rope", RopeBlock::new);

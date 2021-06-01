@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "farmersdelight:block/straw_thatch_slab_top"
+    },
+    "type=bottom": {
+      "model": "farmersdelight:block/straw_thatch_slab"
+    },
+    "type=double": {
+      "model": "farmersdelight:block/straw_thatch"
+    }
+  }
+}

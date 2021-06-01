@@ -62,6 +62,9 @@ public class ClientEventHandler
 		RenderTypeLookup.setRenderLayer(ModBlocks.BASKET.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlocks.ROPE.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlocks.SAFETY_NET.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlocks.STRAW_THATCH.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlocks.STRAW_THATCH_SLAB.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlocks.STRAW_THATCH_STAIRS.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlocks.FULL_TATAMI_MAT.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlocks.ROAST_CHICKEN_BLOCK.get(), RenderType.getCutout());
 
